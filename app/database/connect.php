@@ -3,7 +3,7 @@
 $host = 'db4free.net:3306';
 $user = 'blog_creativepad';
 $pass = 'elsa1234';
-$db_name = 'blog';
+$db_name = 'creative_pad';
 
 $conn = new MySQLi($host, $user, $pass, $db_name);
 
