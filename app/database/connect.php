@@ -11,6 +11,7 @@
 //   die('Database connection error: ' . $conn->connect_error);
 // }
 
+
 $url = getenv('JAWSDB_URL');
 $dbparts = parse_url($url);
 
