@@ -43,7 +43,6 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
   $p_id = $_GET['p_id'];
   //... update published in database
   $count = update($table, $p_id, ['published' => $published]);
-
   $_SESSION['message'] = "Post published state changed!";
   $_SESSION['type'] = "success";
   header("location: " . BASE_URL . "/admin/posts/managePosts.php");
@@ -81,8 +80,6 @@ if(isset($_POST['add-post'])){
 
     //Handle Cross-site scripting
     $_POST['body'] = htmlentities($_POST['body']);
-
-
     $post_id = create($table, $_POST);
     $_SESSION['message'] = "Post created successfully";
     $_SESSION['type'] = "success";
@@ -130,8 +127,6 @@ if(isset($_POST['update-post'])){
 
     //Handle Cross-site scripting
     $_POST['body'] = htmlentities($_POST['body']);
-
-
     $post_id = update($table, $id, $_POST);
     $_SESSION['message'] = "Post updated successfully";
     $_SESSION['type'] = "success";
