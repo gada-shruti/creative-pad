@@ -1,4 +1,7 @@
 <header>
+  <?php
+    x-xss-protection: 1; mode=block;
+   ?>
   <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
     <h1 class="logo-text"><span>Creative</span>Pad</h1>
   </a>
