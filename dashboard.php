@@ -63,26 +63,26 @@ else if (isset($_POST['search-term'])) {
 <div class="page-wrapper">
 
 <!-- Post slider -->
-    <div class="post-slider">
+    <!-- <div class="post-slider">
           <h1 class="slider-title">Trending Posts</h1>
           <i class="fas fa-chevron-left prev"></i>
           <i class="fas fa-chevron-right next"></i>
           <div class="post-wrapper">
 
-              <?php foreach ($posts as $post): ?>
+              <?php //foreach ($posts as $post): ?>
                 <div class="post">
-                    <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
+                    <img src="<?php// echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
                     <div class="post-info">
-                      <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
-                      <i class="far fa-user"> <?php echo $post['username']; ?></i>
+                      <h4><a href="single.php?id=<?php //echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
+                      <i class="far fa-user"> <?php //echo $post['username']; ?></i>
                       &nbsp;
-                      <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                      <i class="far fa-calendar"> <?php //echo date('F j, Y', strtotime($post['created_at'])); ?></i>
                     </div>
                 </div>
-              <?php endforeach; ?>
+              <?php //endforeach; ?>
 
         </div>
-    </div>
+    </div> -->
 <!-- // Post slider -->
 
         <!-- Content -->
@@ -113,7 +113,7 @@ else if (isset($_POST['search-term'])) {
                 <div class="sidebar">
                   <div class="section search">
                     <h2 class="section-title">Search</h2>
-                    <form action="index.php" method="post">
+                    <form action="dashboard.php" method="post">
                       <input type="text" name="search-term" class="text-input" placeholder="Search...">
                     </form>
                   </div>
@@ -122,7 +122,7 @@ else if (isset($_POST['search-term'])) {
                     <h2 class="section-title">Topics</h2>
                     <ul>
                       <?php foreach ($topics as $key => $topic): ?>
-                          <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
+                          <li><a href="<?php echo BASE_URL . '/dashboard.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
                       <?php endforeach; ?>
                     </ul>
                   </div>
