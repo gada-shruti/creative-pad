@@ -10,6 +10,7 @@ $topics = selectAll('topics');
 $posts = selectAll('posts', ['published' => 1]);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

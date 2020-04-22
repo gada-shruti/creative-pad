@@ -27,7 +27,7 @@ function loginUser($user){
         header('location: '  . BASE_URL .'/admin/dashboard.php');
         exit();
     } else {
-        header('location: '  . BASE_URL .'/index.php');
+        header('location: '  . BASE_URL .'/dashboard.php');
         exit();
     }
     exit();
@@ -50,8 +50,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
       $_SESSION['type'] = "success";
       header('location: '  . BASE_URL .'/admin/users/manageUsers.php');
       exit();
-    }
-    else {
+    } else {
       $_POST['admin'] = 0; // 0 is false. i.e. not admin
       $user_id = create($table, $_POST);
       $user = selectOne($table, ['id' => $user_id]);
@@ -81,7 +80,7 @@ if(isset($_POST['update-user'])){
 
       $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
       $count = update($table, $id, $_POST);
-      $_SESSION['message'] = "User updated successfully";
+      $_SESSION['message'] = "Admin user updated";
       $_SESSION['type'] = "success";
       header('location: '  . BASE_URL .'/admin/users/manageUsers.php');
       exit();
@@ -113,7 +112,7 @@ if (isset($_POST['login-btn'])) {
   if (count($errors) === 0) {
     $user = selectOne($table , ['username' => $_POST['username']]);
 
-    if ($user && password_verify($_POST['password'], $user['password'])) { //password_verify is a method provided by php to check the password text againts the hash password
+    if ($user && password_verify($_POST['password'], $user['password'])) { //password_verify is a method provided by php to check the password text against the hash password
       // Log use in
       loginUser($user);
     } else {
@@ -127,7 +126,7 @@ if (isset($_POST['login-btn'])) {
 if(isset($_GET['delete_id'])){
   adminOnly();
   $count = delete($table, $_GET[delete_id]);
-  $_SESSION['message'] = "User deleted successfully";
+  $_SESSION['message'] = "Admin user deleted";
   $_SESSION['type'] = "success";
   header('location: '  . BASE_URL .'/admin/users/manageUsers.php');
   exit();

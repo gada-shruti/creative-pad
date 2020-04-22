@@ -73,7 +73,7 @@ else if (isset($_POST['search-term'])) {
                 <div class="post">
                     <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
                     <div class="post-info">
-                      <h4><a href="login.php"><?php echo $post['title']; ?></a></h4>
+                      <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
                       <i class="far fa-user"> <?php echo $post['username']; ?></i>
                       &nbsp;
                       <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
@@ -87,28 +87,28 @@ else if (isset($_POST['search-term'])) {
 
         <!-- Content -->
 
-            <!-- <div class="content clearfix">
+            <div class="content clearfix">
 
                 <div class="main-content">
-                  <h1 class="recent-post-title"> <?php //echo $postsTitle ?></h1>
+                  <h1 class="recent-post-title"><?php echo $postsTitle ?></h1>
 
-                  <?php //foreach ($posts as $post): ?>
+                  <?php foreach ($posts as $post): ?>
                     <div class="post">
-                      <img src="<?php //echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="post-image">
+                      <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="post-image">
                       <div class="post-preview">
-                        <h2><a href="single.php?id=<?php// echo $post['id']; ?>"><?php// echo $post['title']; ?></a></h2>
-                        <i class="far fa-user"> <?php //echo $post['username']; ?></i>
+                        <h2><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h2>
+                        <i class="far fa-user"> <?php echo $post['username']; ?></i>
                         &nbsp;
-                        <i class="far fa-calendar"> <?php //echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                        <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
                         <p class="preview-text">
-                            <?php //echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
+                            <?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
                         </p>
-                        <a href="single.php?id=<?php// echo $post['id']; ?>" class="btn read-more">Read More</a>
+                        <a href="single.php?id=<?php echo $post['id']; ?>" class="btn read-more">Read More</a>
                       </div>
                     </div>
-                  <?php// endforeach; ?>
+                  <?php endforeach; ?>
                 </div>
-           // Main Content >
+          <!-- // Main Content -->
 
                 <div class="sidebar">
                   <div class="section search">
@@ -121,15 +121,14 @@ else if (isset($_POST['search-term'])) {
                   <div class="section topics">
                     <h2 class="section-title">Topics</h2>
                     <ul>
-                      <?php //foreach ($topics as $key => $topic): ?>
-                          <li><a href="<?php// echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php //echo $topic['name']; ?></a></li>
-                      <?php //endforeach; ?>
+                      <?php foreach ($topics as $key => $topic): ?>
+                          <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
+                      <?php endforeach; ?>
                     </ul>
                   </div>
                 </div>
               </div>
-        <!- // Content -- >
-
+        <!-- // Content -- >
 </div>
 <!-- // Page Wrapper -->
 
