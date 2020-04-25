@@ -14,6 +14,9 @@ function validateUser($user)
   if(empty($user['password'])){
     array_push($errors, 'Password is required');
   }
+  if (strlen($_POST["password"]) <= 8) {
+    array_push($errors, 'Your Password Must Contain At Least 8 Characters!');
+    }
 
   if($user['passwordConf'] !== $user['password']){
     array_push($errors, 'Password do not match');
