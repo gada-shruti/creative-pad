@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db_name = 'blog';
+$host = 'db4free.net:3306';
+$user = 'blog_creativepad';
+$pass = 'elsa1234';
+$db_name = 'creative_pad';
 
 $conn = new MySQLi($host, $user, $pass, $db_name);
 
