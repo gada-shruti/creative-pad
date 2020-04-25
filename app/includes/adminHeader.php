@@ -1,5 +1,5 @@
 <header>
-  <a class="logo" href="<?php echo BASE_URL . '/index.php'; ?>">
+  <a class="logo" href="<?php echo BASE_URL . '/dashboard.php'; ?>">
     <h1 class="logo-text"><span>Creative</span>Pad</h1>
   </a>
     <i class="fa fa-bars menu-toggle"></i>
@@ -15,7 +15,7 @@
               <?php if ($_SESSION['admin']): ?> <!-- To check if the value is true i.e. admin = 1 -->
                   <li><a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
               <?php endif; ?>
-              
+
               <li><a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout">Logout</a></li>
             </ul>
           </li>
