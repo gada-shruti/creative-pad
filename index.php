@@ -51,7 +51,7 @@ else if (isset($_POST['search-term'])) {
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Blog</title>
+  <title>Creative Pad</title>
 </head>
 
 <body>
