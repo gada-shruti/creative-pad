@@ -27,4 +27,4 @@ function guestsOnly($redirect = '/index.php')
     exit(0);
   }
 }
- ?>
+?>
