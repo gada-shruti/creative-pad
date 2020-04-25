@@ -1,17 +1,8 @@
 <?php
-guestsOnly();
+
 include("path.php");
 include(ROOT_PATH . "/app/controllers/topics.php");
-//$posts = selectAll('posts', ['published' => 1]);
-//header (“X-XSS-Protection: 1; mode=block”);
-           //x-xss-protection: 1; mode=block;
-
-  // $headers = [];
-  // $headers['X-XSS-Protection'] = '1; mode=block';
-            // header (“X-XSS-Protection: 1; mode=block”);
-
-
-
+guestsOnly();
 $posts = array();
 
 $postsTitle = 'Recent Posts';
@@ -26,10 +17,7 @@ else if (isset($_POST['search-term'])) {
 } else {
   $posts = getPublishedPosts();
 }
-
  ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +33,6 @@ else if (isset($_POST['search-term'])) {
   <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:ital,wght@1,800&display=swap" rel="stylesheet">
 
-  <!--link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,800&display=swap" rel="stylesheet"-->
-
-  <!--link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"-->
-
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -62,29 +46,6 @@ else if (isset($_POST['search-term'])) {
 
 <!-- Page Wrapper -->
 <div class="page-wrapper">
-
-<!-- Post slider -->
-    <!-- <div class="post-slider">
-          <h1 class="slider-title">Trending Posts</h1>
-          <i class="fas fa-chevron-left prev"></i>
-          <i class="fas fa-chevron-right next"></i>
-          <div class="post-wrapper">
-
-              <?php //foreach ($posts as $post): ?>
-                <div class="post">
-                    <img src="<?php// echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
-                    <div class="post-info">
-                      <h4><a href="single.php?id=<?php //echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
-                      <i class="far fa-user"> <?php //echo $post['username']; ?></i>
-                      &nbsp;
-                      <i class="far fa-calendar"> <?php //echo date('F j, Y', strtotime($post['created_at'])); ?></i>
-                    </div>
-                </div>
-              <?php //endforeach; ?>
-
-        </div>
-    </div> -->
-<!-- // Post slider -->
 
         <!-- Content -->
 
