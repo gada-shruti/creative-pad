@@ -2,6 +2,7 @@
 
 include("path.php");
 include(ROOT_PATH . "/app/controllers/topics.php");
+// include(ROOT_PATH . "/app/helpers/middleware.php");
 guestsOnly();
 $posts = array();
 
@@ -84,7 +85,9 @@ else if (isset($_POST['search-term'])) {
                     <h2 class="section-title">Topics</h2>
                     <ul>
                       <?php foreach ($topics as $key => $topic): ?>
-                          <li><a href="<?php echo BASE_URL . '/dashboard.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
+                          <!-- <li><a href="<?php echo BASE_URL . '/dashboard.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li> -->
+                          <li><a><?php echo $topic['name']; ?></a></li>
+
                       <?php endforeach; ?>
                     </ul>
                   </div>
