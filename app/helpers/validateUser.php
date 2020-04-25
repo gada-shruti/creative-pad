@@ -28,7 +28,9 @@ function validateUser($user)
     if (isset($user['update-user']) && $existingUsername['id'] != $user['id']) {
       array_push($errors, 'Username already exists');
     }
-
+    if(isset($user['register-btn'])){
+      array_push($errors, 'Username already exists');
+    }
     if(isset($user['create-admin'])){
       array_push($errors, 'Username already exists');
     }
@@ -40,7 +42,9 @@ function validateUser($user)
     if (isset($user['update-user']) && $existingUser['id'] != $user['id']) {
       array_push($errors, 'Email already exists');
     }
-
+    if(isset($user['register-btn'])){
+      array_push($errors, 'Email already exists');
+    }
     if(isset($user['create-admin'])){
       array_push($errors, 'Email already exists');
     }
