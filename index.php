@@ -1,15 +1,6 @@
 <?php
 include("path.php");
 include(ROOT_PATH . "/app/controllers/topics.php");
-//$posts = selectAll('posts', ['published' => 1]);
-//header (“X-XSS-Protection: 1; mode=block”);
-           //x-xss-protection: 1; mode=block;
-
-  // $headers = [];
-  // $headers['X-XSS-Protection'] = '1; mode=block';
-            // header (“X-XSS-Protection: 1; mode=block”);
-
-
 
 $posts = array();
 
@@ -25,10 +16,7 @@ else if (isset($_POST['search-term'])) {
 } else {
   $posts = getPublishedPosts();
 }
-
- ?>
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +31,6 @@ else if (isset($_POST['search-term'])) {
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:ital,wght@1,800&display=swap" rel="stylesheet">
-
-  <!--link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,800&display=swap" rel="stylesheet"-->
-
-  <!--link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"-->
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -84,51 +68,6 @@ else if (isset($_POST['search-term'])) {
         </div>
     </div>
 <!-- // Post slider -->
-
-        <!-- Content -->
-
-            <!-- <div class="content clearfix">
-
-                <div class="main-content">
-                  <h1 class="recent-post-title"> <?php //echo $postsTitle ?></h1>
-
-                  <?php //foreach ($posts as $post): ?>
-                    <div class="post">
-                      <img src="<?php //echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="post-image">
-                      <div class="post-preview">
-                        <h2><a href="single.php?id=<?php// echo $post['id']; ?>"><?php// echo $post['title']; ?></a></h2>
-                        <i class="far fa-user"> <?php //echo $post['username']; ?></i>
-                        &nbsp;
-                        <i class="far fa-calendar"> <?php //echo date('F j, Y', strtotime($post['created_at'])); ?></i>
-                        <p class="preview-text">
-                            <?php //echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
-                        </p>
-                        <a href="single.php?id=<?php// echo $post['id']; ?>" class="btn read-more">Read More</a>
-                      </div>
-                    </div>
-                  <?php// endforeach; ?>
-                </div>
-           // Main Content >
-
-                <div class="sidebar">
-                  <div class="section search">
-                    <h2 class="section-title">Search</h2>
-                    <form action="index.php" method="post">
-                      <input type="text" name="search-term" class="text-input" placeholder="Search...">
-                    </form>
-                  </div>
-
-                  <div class="section topics">
-                    <h2 class="section-title">Topics</h2>
-                    <ul>
-                      <?php //foreach ($topics as $key => $topic): ?>
-                          <li><a href="<?php// echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php //echo $topic['name']; ?></a></li>
-                      <?php //endforeach; ?>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        <!- // Content -- >
 
 </div>
 <!-- // Page Wrapper -->
