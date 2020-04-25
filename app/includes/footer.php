@@ -14,6 +14,6 @@
   text-align: center;
   /* padding-top: 20px; */
   padding: .7rem 1.2rem;
-  position: absolute;
+  position: relative;
 }
 </style>
